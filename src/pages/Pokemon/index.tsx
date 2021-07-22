@@ -11,9 +11,11 @@ const PokemonList: FC = () => {
     switch (type) {
       case "set":
         setKeyValue(inputValue ?? "");
+        setInputValue("");
         break;
       case "remove":
         removeKeyValue("key");
+        setInputValue("");
         break;
       default:
         break;
@@ -27,6 +29,7 @@ const PokemonList: FC = () => {
         <input
           name="key"
           onChange={(event) => setInputValue(event.target.value)}
+          value={inputValue}
         />
         <button type="button" onClick={() => handleClick("set")}>
           Set key
