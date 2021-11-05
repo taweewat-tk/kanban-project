@@ -1,21 +1,21 @@
-import { FC, useState } from "react";
-import { useLocalStorage } from "../../hooks/localStorage";
+import { FC, useState } from 'react';
+import { useLocalStorage } from '../../hooks/localStorage';
 
 const PokemonList: FC = () => {
-  console.log("Test Log");
+  console.log('Test Log');
 
-  const [keyValue, setKeyValue, removeKeyValue] = useLocalStorage("key");
+  const [keyValue, setKeyValue, removeKeyValue] = useLocalStorage('key');
   const [inputValue, setInputValue] = useState<string>();
 
   const handleClick = (type: string) => {
     switch (type) {
-      case "set":
-        setKeyValue(inputValue ?? "");
-        setInputValue("");
+      case 'set':
+        setKeyValue(inputValue ?? '');
+        setInputValue('');
         break;
-      case "remove":
-        removeKeyValue("key");
-        setInputValue("");
+      case 'remove':
+        removeKeyValue('key');
+        setInputValue('');
         break;
       default:
         break;
@@ -28,13 +28,13 @@ const PokemonList: FC = () => {
       <div>
         <input
           name="key"
-          onChange={(event) => setInputValue(event.target.value)}
+          onChange={event => setInputValue(event.target.value)}
           value={inputValue}
         />
-        <button type="button" onClick={() => handleClick("set")}>
+        <button type="button" onClick={() => handleClick('set')}>
           Set key
         </button>
-        <button type="button" onClick={() => handleClick("remove")}>
+        <button type="button" onClick={() => handleClick('remove')}>
           Remove key
         </button>
       </div>
