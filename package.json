@@ -21,6 +21,7 @@
   },
   "scripts": {
     "dev": "craco start",
+    "format": "npx prettier --write '**/*.{ts,tsx}'",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
@@ -46,6 +47,7 @@
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "postcss": "^7.0.36",
+    "prettier": "2.4.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.14"
   }
 }
